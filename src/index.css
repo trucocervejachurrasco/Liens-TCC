@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Elegant Fashion Store Design System */
+/* Minimalist, monochromatic with subtle blue accents */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
+    /* Pure minimalist palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 220 13% 18%;
+    
+    /* Subtle blue accent system */
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 94% 58%;
+    --primary-light: 213 94% 95%;
+    
+    /* Neutral grays for hierarchy */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 46%;
+    
+    --muted: 220 14% 98%;
+    --muted-foreground: 220 13% 60%;
+    
+    /* Elegant card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 220 13% 18%;
+    --card-border: 220 13% 91%;
+    
+    /* Subtle accents */
+    --accent: 213 100% 97%;
+    --accent-foreground: 213 94% 68%;
+    
+    /* Form elements */
+    --input: 220 13% 91%;
+    --input-border: 220 13% 86%;
+    --input-focus: 213 94% 68%;
+    
+    --border: 220 13% 91%;
+    --ring: 213 94% 68%;
+    
+    /* Elegant radius system */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Refined shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Typography scale */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    
+    /* Spacious layout */
+    --container-max: 1200px;
+    --section-spacing: 5rem;
+    --element-spacing: 2rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,64 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Elegant container */
+  .container-elegant {
+    @apply mx-auto px-6 lg:px-8;
+    max-width: var(--container-max);
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           px-6 py-3 rounded-lg font-medium transition-all duration-200
+           shadow-sm hover:shadow;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
+           px-6 py-3 rounded-lg font-medium transition-all duration-200
+           border border-input;
+  }
+  
+  .btn-minimal {
+    @apply text-muted-foreground hover:text-foreground
+           px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  /* Card system */
+  .card-elegant {
+    @apply bg-card border border-card-border rounded-xl
+           shadow-sm hover:shadow transition-all duration-200;
+  }
+  
+  /* Input system */
+  .input-elegant {
+    @apply bg-background border border-input-border rounded-lg px-4 py-3
+           text-foreground placeholder:text-muted-foreground
+           focus:border-input-focus focus:ring-1 focus:ring-input-focus
+           transition-colors duration-200;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground
+           font-medium transition-colors duration-200
+           relative after:absolute after:bottom-0 after:left-0 after:h-0.5 
+           after:w-0 after:bg-primary after:transition-all after:duration-200
+           hover:after:w-full;
+  }
+  
+  .nav-link-active {
+    @apply text-foreground after:w-full;
   }
 }
