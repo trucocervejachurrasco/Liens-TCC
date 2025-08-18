@@ -98,9 +98,9 @@ const Cart = () => {
               </span>
             </div>
             
-            <button className="btn-primary w-full text-lg py-4">
+            <Link to="/checkout" className="btn-primary w-full text-lg py-4">
               Finalizar Compra
-            </button>
+            </Link>
           </div>
         </div>
       </div>
