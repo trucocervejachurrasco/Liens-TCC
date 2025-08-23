@@ -13,11 +13,11 @@
     --background: 0 0% 100%;
     --foreground: 220 13% 18%;
     
-    /* Subtle blue accent system */
-    --primary: 213 94% 68%;
+    /* Custom blue accent system - #363a8f */
+    --primary: 234 43% 39%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 213 94% 58%;
-    --primary-light: 213 94% 95%;
+    --primary-hover: 234 43% 32%;
+    --primary-light: 234 43% 96%;
     
     /* Neutral grays for hierarchy */
     --secondary: 220 14% 96%;
@@ -32,16 +32,16 @@
     --card-border: 220 13% 91%;
     
     /* Subtle accents */
-    --accent: 213 100% 97%;
-    --accent-foreground: 213 94% 68%;
+    --accent: 234 43% 97%;
+    --accent-foreground: 234 43% 39%;
     
     /* Form elements */
     --input: 220 13% 91%;
     --input-border: 220 13% 86%;
-    --input-focus: 213 94% 68%;
+    --input-focus: 234 43% 39%;
     
     --border: 220 13% 91%;
-    --ring: 213 94% 68%;
+    --ring: 234 43% 39%;
     
     /* Elegant radius system */
     --radius: 8px;
@@ -75,7 +75,7 @@
 
     --sidebar-border: 220 13% 91%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 234 43% 39%;
   }
 
   .dark {
@@ -108,12 +108,12 @@
     --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 234 43% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 234 43% 39%;
   }
 }
 
