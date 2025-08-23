@@ -16,7 +16,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
-    name: 'Jaqueta Jeans Clássica',
+    name: 'Boné Liens Sport Club',
     price: 80.50,
     image: bone,
     category: 'Bonés',
