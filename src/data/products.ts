@@ -1,6 +1,6 @@
 import { Product } from '@/context/CartContext';
 import tshirtImage from '@/assets/camisetapsg.jpg';
-import jacketImage from '@/assets/product-jacket.jpg';
+import bone from '@/assets/bone.jpg';
 import dressImage from '@/assets/product-dress.jpg';
 import jeansImage from '@/assets/product-jeans.jpg';
 
@@ -17,11 +17,11 @@ export const products: Product[] = [
   {
     id: '2',
     name: 'Jaqueta Jeans Clássica',
-    price: 299.90,
-    image: jacketImage,
-    category: 'Jaquetas',
+    price: 80.50,
+    image: bone,
+    category: 'Bonés',
     sizes: ['P', 'M', 'G', 'GG'],
-    description: 'Jaqueta jeans atemporal com corte moderno. Ideal para compor looks casuais com um toque de sofisticação.'
+    description: 'Boné inspirado no esporte francês, combinando conforto, leveza e o estilo esportivo-chic de Paris.'
   },
   {
     id: '3',
@@ -49,14 +49,5 @@ export const products: Product[] = [
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta com modelagem oversized para um visual despojado e moderno. Máximo conforto para o seu dia.'
-  },
-  {
-    id: '6',
-    name: 'Blazer Minimalista',
-    price: 399.90,
-    image: jacketImage,
-    category: 'Blazers',
-    sizes: ['P', 'M', 'G', 'GG'],
-    description: 'Blazer com design minimalista e corte impecável. Peça versátil para looks profissionais e casuais.'
   }
 ];
