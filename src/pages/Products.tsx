@@ -7,11 +7,10 @@ const Products = () => {
       <div className="container-elegant">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-light tracking-tight mb-4">
-            Nossa Coleção
+            Liens Sport Club
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Descubra peças únicas e atemporais, criadas com atenção aos detalhes 
-            e materiais de alta qualidade
+            Coleção inspirada no esporte francês, unindo movimento, sofisticação e o estilo dinâmico da França.
           </p>
         </div>
         
