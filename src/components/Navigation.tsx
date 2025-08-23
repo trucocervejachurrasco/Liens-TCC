@@ -13,7 +13,7 @@ const Navigation = () => {
       <div className="container-elegant py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-semibold tracking-tight">
-            Elegante
+            Liens Co.
           </Link>
           
           <div className="flex items-center space-x-8">
