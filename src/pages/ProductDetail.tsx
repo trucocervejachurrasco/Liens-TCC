@@ -5,6 +5,13 @@ import { products } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -66,13 +73,41 @@ const ProductDetail = () => {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Product Image */}
-          <div className="aspect-square overflow-hidden rounded-xl bg-muted cursor-zoom-in">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-            />
+          {/* Product Images Carousel */}
+          <div className="relative">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {product.images && product.images.length > 0 ? (
+                  product.images.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="aspect-square overflow-hidden rounded-xl bg-muted cursor-zoom-in">
+                        <img
+                          src={image}
+                          alt={`${product.name} - Visão ${index + 1}`}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))
+                ) : (
+                  <CarouselItem>
+                    <div className="aspect-square overflow-hidden rounded-xl bg-muted cursor-zoom-in">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </CarouselItem>
+                )}
+              </CarouselContent>
+              {product.images && product.images.length > 1 && (
+                <>
+                  <CarouselPrevious className="left-4" />
+                  <CarouselNext className="right-4" />
+                </>
+              )}
+            </Carousel>
           </div>
 
           {/* Product Details */}
