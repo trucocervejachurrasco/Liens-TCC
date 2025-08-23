@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, User } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const Navigation = () => {
@@ -34,6 +34,12 @@ const Navigation = () => {
               className={`nav-link ${isActive('/register') ? 'nav-link-active' : ''}`}
             >
               Cadastro
+            </Link>
+            <Link 
+              to="/account" 
+              className={`nav-link ${isActive('/account') ? 'nav-link-active' : ''} flex items-center space-x-1`}
+            >
+              <User size={18} />
             </Link>
             <Link 
               to="/cart" 

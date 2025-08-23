@@ -67,11 +67,11 @@ const ProductDetail = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Image */}
-          <div className="aspect-square overflow-hidden rounded-xl bg-muted">
+          <div className="aspect-square overflow-hidden rounded-xl bg-muted cursor-zoom-in">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
             />
           </div>
 

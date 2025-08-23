@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from '@/hooks/use-toast';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,6 +48,11 @@ const Register = () => {
       city: '',
       zipCode: ''
     });
+    
+    // Redirect to account page after successful registration
+    setTimeout(() => {
+      navigate('/account');
+    }, 1000);
   };
   
   return (
