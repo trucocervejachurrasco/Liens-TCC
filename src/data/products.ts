@@ -1,5 +1,5 @@
 import { Product } from '@/context/CartContext';
-import tshirtImage from '@/assets/product-tshirt.jpg';
+import tshirtImage from '@/assets/camiseta1.jpg';
 import jacketImage from '@/assets/product-jacket.jpg';
 import dressImage from '@/assets/product-dress.jpg';
 import jeansImage from '@/assets/product-jeans.jpg';
