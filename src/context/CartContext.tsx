@@ -6,10 +6,13 @@ export interface Product {
   price: number;
   image: string;
   category: string;
+  sizes?: string[];
+  description?: string;
 }
 
 export interface CartItem extends Product {
   quantity: number;
+  selectedSize?: string;
 }
 
 interface CartState {
@@ -18,9 +21,9 @@ interface CartState {
 }
 
 type CartAction =
-  | { type: 'ADD_ITEM'; payload: Product }
+  | { type: 'ADD_ITEM'; payload: Product & { selectedSize?: string } }
   | { type: 'REMOVE_ITEM'; payload: string }
-  | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number } }
+  | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number; selectedSize?: string } }
   | { type: 'CLEAR_CART' };
 
 const CartContext = createContext<{
@@ -31,11 +34,13 @@ const CartContext = createContext<{
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_ITEM': {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+      const existingItem = state.items.find(item => 
+        item.id === action.payload.id && item.selectedSize === action.payload.selectedSize
+      );
       
       if (existingItem) {
         const updatedItems = state.items.map(item =>
-          item.id === action.payload.id
+          item.id === action.payload.id && item.selectedSize === action.payload.selectedSize
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -45,7 +50,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         };
       }
       
-      const newItems = [...state.items, { ...action.payload, quantity: 1 }];
+      const newItems = [...state.items, { ...action.payload, quantity: 1, selectedSize: action.payload.selectedSize }];
       return {
         items: newItems,
         total: newItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
