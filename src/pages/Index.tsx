@@ -14,7 +14,7 @@ const Index = () => {
             Liens
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Conheça agora a coleção Liens Sport Club.
+            Criando laços desde 2023.
           </p>
           <Link to="/products" className="btn-primary inline-flex">
             Explorar Coleção
