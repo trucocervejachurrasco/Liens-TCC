@@ -37,7 +37,7 @@ export const products: Product[] = [
     id: '5',
     name: 'Camiseta Oversized',
     price: 79.90,
-    image: tshirtImage,
+    image: camiseta1,
     category: 'Camisetas'
   },
   {
