@@ -11,10 +11,10 @@ const Index = () => {
       <section className="py-24 bg-gradient-to-b from-background to-muted/30">
         <div className="container-elegant text-center">
           <h1 className="text-5xl lg:text-6xl font-light tracking-tight mb-6">
-            Elegante
+            Liens
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Moda minimalista e atemporal para pessoas que valorizam simplicidade e qualidade
+            Criando laços desde 2023.
           </p>
           <Link to="/products" className="btn-primary inline-flex">
             Explorar Coleção
