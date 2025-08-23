@@ -7,8 +7,8 @@ import jeansImage from '@/assets/product-jeans.jpg';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Camiseta Básica Premium',
-    price: 89.90,
+    name: 'Camiseta Creme Liens Paris ',
+    price: 95.99,
     image: tshirtImage,
     category: 'Camisetas'
   },
