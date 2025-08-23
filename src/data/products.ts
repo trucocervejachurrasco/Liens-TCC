@@ -1,5 +1,5 @@
 import { Product } from '@/context/CartContext';
-import tshirtImage from '@/assets/product-tshirt.jpg';
+import tshirtImage from '@/assets/camisetapsg.jpg';
 import jacketImage from '@/assets/product-jacket.jpg';
 import dressImage from '@/assets/product-dress.jpg';
 import jeansImage from '@/assets/product-jeans.jpg';
@@ -7,8 +7,8 @@ import jeansImage from '@/assets/product-jeans.jpg';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Camiseta Básica Premium',
-    price: 89.90,
+    name: 'Camiseta Creme Liens Sport Club',
+    price: 95.99,
     image: tshirtImage,
     category: 'Camisetas'
   },
