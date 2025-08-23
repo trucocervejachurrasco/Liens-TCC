@@ -1,13 +1,12 @@
 import { Product } from '@/context/CartContext';
 import tshirtImage from '@/assets/camisetapsg.jpg';
 import tshirtFront from '@/assets/camisetapsg-front.jpg';
-import tshirtBack from '@/assets/camisetapsg-back.jpg';
+import tshirtBack from '@/assets/camisetapsgverso.jpg';
 import bone from '@/assets/bone.jpg';
 import boneFront from '@/assets/bone-front.jpg';
 import boneBack from '@/assets/bone-back.jpg';
-import dressImage from '@/assets/product-dress.jpg';
-import dressFront from '@/assets/product-dress-front.jpg';
-import dressBack from '@/assets/product-dress-back.jpg';
+import nascidoparavencer from '@/assets/camisetadoue.jpg';
+import nascidoparavencer2 from '@/assets/camisetadoueverso.jpg';
 import jeansImage from '@/assets/product-jeans.jpg';
 import jeansFront from '@/assets/product-jeans-front.jpg';
 import jeansBack from '@/assets/product-jeans-back.jpg';
@@ -18,7 +17,7 @@ export const products: Product[] = [
     name: 'Camiseta Creme Liens Sport Club',
     price: 95.99,
     image: tshirtImage,
-    images: [tshirtFront, tshirtBack],
+    images: [tshirtImage, tshirtBack],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta premium em algodão macio com design exclusivo do Liens Sport Club. Perfeita para o dia a dia com estilo casual e conforto.'
@@ -28,20 +27,20 @@ export const products: Product[] = [
     name: 'Boné Liens Sport Club',
     price: 80.50,
     image: bone,
-    images: [boneFront, boneBack],
+    images: [bone, boneBack],
     category: 'Bonés',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Boné inspirado no esporte francês, combinando conforto, leveza e o estilo esportivo-chic de Paris.'
   },
   {
     id: '3',
-    name: 'Vestido Elegante',
-    price: 199.90,
-    image: dressImage,
-    images: [dressFront, dressBack],
-    category: 'Vestidos',
+    name: 'Camiseta Preta Nascido Para Vencer',
+    price: 109.99,
+    image: nascidoparavencer,
+    images: [nascidoparavencer, nascidoparavencer2],
+    category: 'Camisetas',
     sizes: ['PP', 'P', 'M', 'G', 'GG'],
-    description: 'Vestido elegante com caimento perfeito. Ideal para ocasiões especiais ou eventos sociais.'
+    description: 'Camiseta premium com estampa exclusiva nas costas, celebrando a conquista histórica do PSG na Champions 2025. Um design que une esporte, estilo e a sofisticação francesa em cada detalhe.'
   },
   {
     id: '4',
