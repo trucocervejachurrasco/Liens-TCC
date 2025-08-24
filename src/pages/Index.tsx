@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
-import heroBackground from '@/assets/hero-background.jpg';
+import heroBackground from '@/assets/header.png';
 import logo from '@/assets/logo2.png';
 
 const Index = () => {
