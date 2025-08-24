@@ -11,6 +11,9 @@ import jaqueta from '@/assets/jaqueta.jpg';
 import jaquetaverso from '@/assets/jaquetaverso.jpg';
 import polo from '@/assets/polo.jpg';
 import poloverso from '@/assets/poloverso.jpg';
+import short from '@/assets/short.jpg';
+import short2 from '@/assets/short2.jpg';
+import shortverso from '@/assets/shortverso.jpg';
 
 export const products: Product[] = [
   {
@@ -62,5 +65,25 @@ export const products: Product[] = [
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta polo branca inspirada no esporte francês, feita para o tênis. Une elegância clássica, leveza e a sofisticação esportiva de Paris, refletindo o equilíbrio entre performance e estilo.'
+  },
+  {
+    id: '6',
+    name: 'Short Liens Mapa de Calor',
+    price: 109.90,
+    image: short,
+    images: [short, shortverso],
+    category: 'Shorts',
+    sizes: ['P', 'M', 'G'],
+    description: 'Short esportivo com estampa termal, inspirado no dinamismo do esporte francês. Une conforto, performance e estilo contemporâneo, refletindo a energia autêntica das ruas e quadras de Paris.'
+  },
+  {
+    id: '7',
+    name: 'Short Liens Sport Club',
+    price: 99.99,
+    image: short2,
+    images: [short2, shortverso],
+    category: 'Shorts',
+    sizes: ['P', 'M', 'G'],
+    description: 'Short minimalista com o emblema da Liens Sport Club. Representa a essência do streetwear parisiense, unindo praticidade e sofisticação esportiva em uma peça versátil e icônica.'
   }
 ];
