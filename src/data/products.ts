@@ -11,7 +11,7 @@ import jaqueta from '@/assets/jaqueta.jpg';
 import jaquetaverso from '@/assets/jaquetaverso.jpg';
 import polo from '@/assets/polo.jpg';
 import poloverso from '@/assets/poloverso.jpg';
-import short from '@/assets/short.jpg';
+import short from '@/assets/shortfrente.jpg';
 import short2 from '@/assets/short2.jpg';
 import shortverso from '@/assets/shortverso.jpg';
 
