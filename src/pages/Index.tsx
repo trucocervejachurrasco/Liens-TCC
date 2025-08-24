@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
 import heroBackground from '@/assets/hero-background.jpg';
-import logo from '@/assets/logo1.png';
+import logo from '@/assets/logo2.png';
 
 const Index = () => {
   const featuredProducts = products.slice(0, 4);
