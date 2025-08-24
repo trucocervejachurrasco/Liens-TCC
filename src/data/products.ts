@@ -7,9 +7,8 @@ import boneFront from '@/assets/bone-front.jpg';
 import boneBack from '@/assets/bone-back.jpg';
 import nascidoparavencer from '@/assets/camisetadoue.jpg';
 import nascidoparavencer2 from '@/assets/camisetadoueverso.jpg';
-import jeansImage from '@/assets/product-jeans.jpg';
-import jeansFront from '@/assets/product-jeans-front.jpg';
-import jeansBack from '@/assets/product-jeans-back.jpg';
+import jaqueta from '@/assets/jaqueta.jpg';
+import jaquetaverso from '@/assets/jaquetaverso.jpg';
 
 export const products: Product[] = [
   {
@@ -44,13 +43,13 @@ export const products: Product[] = [
   },
   {
     id: '4',
-    name: 'Calça Jeans Slim',
-    price: 149.90,
-    image: jeansImage,
-    images: [jeansFront, jeansBack],
-    category: 'Calças',
-    sizes: ['36', '38', '40', '42', '44', '46'],
-    description: 'Calça jeans com modelagem slim fit que valoriza a silhueta. Conforto e estilo em uma única peça.'
+    name: 'Jaqueta Esportiva Liens Sport Club',
+    price: 199.90,
+    image: jaqueta,
+    images: [jaqueta, jaquetaverso],
+    category: 'Jaqueta',
+    sizes: ['P', 'M', 'G', 'GG', 'G1', 'G4'],
+    description: 'Jaqueta premium inspirada na glória do PSG na Champions 2025. Design sofisticado que une o espírito esportivo francês à elegância urbana, feita para destacar estilo e conquista em qualquer ocasião.'
   },
   {
     id: '5',
