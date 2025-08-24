@@ -9,6 +9,8 @@ import nascidoparavencer from '@/assets/camisetadoue.jpg';
 import nascidoparavencer2 from '@/assets/camisetadoueverso.jpg';
 import jaqueta from '@/assets/jaqueta.jpg';
 import jaquetaverso from '@/assets/jaquetaverso.jpg';
+import polo from '@/assets/polo.jpg';
+import poloverso from '@/assets/poloverso.jpg';
 
 export const products: Product[] = [
   {
@@ -53,12 +55,12 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'Camiseta Oversized',
-    price: 79.90,
-    image: tshirtImage,
-    images: [tshirtFront, tshirtBack],
+    name: 'Camisa Polo Tenis Liens',
+    price: 129.90,
+    image: polo,
+    images: [polo, poloverso],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
-    description: 'Camiseta com modelagem oversized para um visual despojado e moderno. Máximo conforto para o seu dia.'
+    description: 'Camiseta polo branca inspirada no esporte francês, feita para o tênis. Une elegância clássica, leveza e a sofisticação esportiva de Paris, refletindo o equilíbrio entre performance e estilo.'
   }
 ];
