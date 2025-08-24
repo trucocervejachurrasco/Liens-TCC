@@ -61,18 +61,18 @@ const ProductDetail = () => {
   const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   return (
-    <div className="min-h-screen bg-background py-8">
-      <div className="container-elegant">
+    <div className="min-h-screen bg-background py-6 sm:py-8">
+      <div className="container-elegant px-4">
         {/* Back button */}
         <Link 
           to="/products" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 sm:mb-8 transition-colors text-sm sm:text-base"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
           Voltar aos produtos
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Product Images Carousel */}
           <div className="relative">
             <Carousel className="w-full">
@@ -111,14 +111,14 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Details */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div>
-              <p className="text-muted-foreground text-sm mb-2">{product.category}</p>
-              <h1 className="text-3xl font-light tracking-tight mb-4">{product.name}</h1>
-              <p className="text-3xl font-semibold text-primary mb-6">
+              <p className="text-muted-foreground text-xs sm:text-sm mb-2">{product.category}</p>
+              <h1 className="text-2xl sm:text-3xl font-light tracking-tight mb-3 sm:mb-4">{product.name}</h1>
+              <p className="text-2xl sm:text-3xl font-semibold text-primary mb-4 sm:mb-6">
                 R$ {product.price.toFixed(2)}
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                 {product.description}
               </p>
             </div>
@@ -126,13 +126,13 @@ const ProductDetail = () => {
             {/* Size Selection */}
             {product.sizes && (
               <div>
-                <h3 className="font-medium mb-3">Tamanho</h3>
+                <h3 className="font-medium mb-3 text-sm sm:text-base">Tamanho</h3>
                 <div className="flex flex-wrap gap-2">
                   {product.sizes.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-4 py-2 border rounded-lg font-medium transition-all ${
+                      className={`px-3 py-2 sm:px-4 border rounded-lg font-medium transition-all text-sm sm:text-base ${
                         selectedSize === size
                           ? 'border-primary bg-primary text-primary-foreground'
                           : 'border-input hover:border-primary'
@@ -147,23 +147,25 @@ const ProductDetail = () => {
 
             {/* Quantity Selection */}
             <div>
-              <h3 className="font-medium mb-3">Quantidade</h3>
+              <h3 className="font-medium mb-3 text-sm sm:text-base">Quantidade</h3>
               <div className="flex items-center gap-3">
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={decrementQuantity}
                   disabled={quantity <= 1}
+                  className="h-8 w-8 sm:h-10 sm:w-10"
                 >
-                  <Minus size={16} />
+                  <Minus size={14} className="sm:w-4 sm:h-4" />
                 </Button>
-                <span className="text-lg font-medium w-12 text-center">{quantity}</span>
+                <span className="text-base sm:text-lg font-medium w-10 sm:w-12 text-center">{quantity}</span>
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={incrementQuantity}
+                  className="h-8 w-8 sm:h-10 sm:w-10"
                 >
-                  <Plus size={16} />
+                  <Plus size={14} className="sm:w-4 sm:h-4" />
                 </Button>
               </div>
             </div>
@@ -171,16 +173,16 @@ const ProductDetail = () => {
             {/* Add to Cart Button */}
             <Button
               onClick={handleAddToCart}
-              className="w-full h-12 text-base font-medium"
+              className="w-full h-10 sm:h-12 text-sm sm:text-base font-medium"
               size="lg"
             >
-              <ShoppingCart size={20} className="mr-2" />
+              <ShoppingCart size={16} className="sm:w-5 sm:h-5 mr-2" />
               Adicionar ao carrinho
             </Button>
 
             {/* Product Features */}
-            <div className="border-t pt-6 space-y-4">
-              <div className="grid grid-cols-1 gap-4 text-sm">
+            <div className="border-t pt-4 sm:pt-6 space-y-3 sm:space-y-4">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 text-xs sm:text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Material:</span>
                   <span>100% Algodão</span>

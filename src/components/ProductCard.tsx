@@ -29,12 +29,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
           />
         </div>
         
-        <div className="p-6">
-          <h3 className="font-medium text-lg mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
-          <p className="text-muted-foreground text-sm mb-4">{product.category}</p>
+        <div className="p-4 sm:p-6">
+          <h3 className="font-medium text-base sm:text-lg mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
+          <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{product.category}</p>
           
           <div className="flex items-center justify-between">
-            <span className="text-xl font-semibold">
+            <span className="text-lg sm:text-xl font-semibold">
               R$ {product.price.toFixed(2)}
             </span>
             
@@ -44,9 +44,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 e.stopPropagation();
                 handleAddToCart();
               }}
-              className="btn-primary p-3 rounded-full hover:bg-primary-hover transition-colors"
+              className="btn-primary p-2 sm:p-3 rounded-full hover:bg-primary-hover transition-colors"
+              aria-label={`Adicionar ${product.name} ao carrinho`}
             >
-              <Plus size={16} />
+              <Plus size={14} className="sm:w-4 sm:h-4" />
             </button>
           </div>
         </div>

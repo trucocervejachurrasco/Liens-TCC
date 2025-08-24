@@ -135,21 +135,21 @@
 @layer components {
   /* Elegant container */
   .container-elegant {
-    @apply mx-auto px-6 lg:px-8;
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
     max-width: var(--container-max);
   }
   
   /* Button variants */
   .btn-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90 
-           px-6 py-3 rounded-lg font-medium transition-all duration-200
-           shadow-sm hover:shadow;
+           px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-all duration-200
+           shadow-sm hover:shadow text-sm sm:text-base;
   }
   
   .btn-secondary {
     @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
-           px-6 py-3 rounded-lg font-medium transition-all duration-200
-           border border-input;
+           px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-all duration-200
+           border border-input text-sm sm:text-base;
   }
   
   .btn-minimal {
