@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, User } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo1.png';
 
 const Navigation = () => {
   const location = useLocation();
