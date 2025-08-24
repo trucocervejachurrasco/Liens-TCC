@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, User } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const location = useLocation();
@@ -12,8 +13,8 @@ const Navigation = () => {
     <nav className="border-b border-border bg-background">
       <div className="container-elegant py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-semibold tracking-tight">
-            Liens Co.
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={logo} alt="Liens Co." className="h-10 w-auto" />
           </Link>
           
           <div className="flex items-center space-x-8">
