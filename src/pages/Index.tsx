@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
 import heroBackground from '@/assets/hero-background.jpg';
+import logo from '@/assets/logo1.png';
 
 const Index = () => {
   const featuredProducts = products.slice(0, 4);
@@ -19,9 +20,11 @@ const Index = () => {
         }}
       >
         <div className="container-elegant text-center relative z-10">
-          <h1 className="text-5xl lg:text-6xl font-light tracking-tight mb-6 text-white">
-            Liens
-          </h1>
+          <img 
+            src={logo} 
+            alt="Liens" 
+            className="h-16 lg:h-20 mx-auto mb-6 filter brightness-0 invert"
+          />
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Criando laços desde 2023.
           </p>
