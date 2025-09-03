@@ -27,11 +27,13 @@ export const products: Product[] = [
         name: 'Creme',
         value: '#F5F5DC',
         images: [tshirtImage, tshirtBack]
-
-        name: 'Preto',
+      }
+      {
+       name: 'Preto',
         value: '#000000',
         images: [jaqueta, jaquetaverso]
       }
+      
     ],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
