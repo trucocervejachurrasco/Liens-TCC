@@ -2,11 +2,15 @@ import { Product, ProductColor } from '@/context/CartContext';
 import tshirtImage from '@/assets/camisetapsg.jpg';
 import tshirtFront from '@/assets/camisetapsg-front.jpg';
 import tshirtBack from '@/assets/camisetapsgverso.jpg';
+import psgpreta from '@/assets/camisetapsgpreta.jpg';
+import psgpretaverso from '@/assets/camisetapsgpretaverso.jpg';
 import bone from '@/assets/bone.jpg';
 import boneFront from '@/assets/bone-front.jpg';
 import boneBack from '@/assets/bone-back.jpg';
 import nascidoparavencer from '@/assets/camisetadoue.jpg';
 import nascidoparavencer2 from '@/assets/camisetadoueverso.jpg';
+import nascidoparavencerbranco from '@/assets/camisetadouebranca.jpg';
+import nascidoparavencerbranco2 from '@/assets/camisetadouebrancaverso.jpg';
 import jaqueta from '@/assets/jaqueta.jpg';
 import jaquetaverso from '@/assets/jaquetaverso.jpg';
 import polo from '@/assets/polo.jpg';
@@ -31,7 +35,7 @@ export const products: Product[] = [
       {
         name: 'Preto',
         value: '#000000',
-        images: [tshirtImage, tshirtBack]
+        images: [psgpreta, psgpretaverso]
       },
     ],
     category: 'Camisetas',
@@ -63,7 +67,7 @@ export const products: Product[] = [
       {
         name: 'Branco',
         value: '#FFFFFF',
-        images: [nascidoparavencer, nascidoparavencer2]
+        images: [nascidoparavencerbranco, nascidoparavencerbranco2]
       },
     ],
     category: 'Camisetas',
