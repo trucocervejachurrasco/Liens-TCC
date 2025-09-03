@@ -1,11 +1,18 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
+export interface ProductColor {
+  name: string;
+  value: string;
+  images: string[];
+}
+
 export interface Product {
   id: string;
   name: string;
   price: number;
   image: string;
   images?: string[];
+  colors?: ProductColor[];
   category: string;
   sizes?: string[];
   description?: string;
@@ -14,6 +21,7 @@ export interface Product {
 export interface CartItem extends Product {
   quantity: number;
   selectedSize?: string;
+  selectedColor?: string;
 }
 
 interface CartState {
@@ -22,9 +30,9 @@ interface CartState {
 }
 
 type CartAction =
-  | { type: 'ADD_ITEM'; payload: Product & { selectedSize?: string } }
+  | { type: 'ADD_ITEM'; payload: Product & { selectedSize?: string; selectedColor?: string } }
   | { type: 'REMOVE_ITEM'; payload: string }
-  | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number; selectedSize?: string } }
+  | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number; selectedSize?: string; selectedColor?: string } }
   | { type: 'CLEAR_CART' };
 
 const CartContext = createContext<{
@@ -36,12 +44,16 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_ITEM': {
       const existingItem = state.items.find(item => 
-        item.id === action.payload.id && item.selectedSize === action.payload.selectedSize
+        item.id === action.payload.id && 
+        item.selectedSize === action.payload.selectedSize &&
+        item.selectedColor === action.payload.selectedColor
       );
       
       if (existingItem) {
         const updatedItems = state.items.map(item =>
-          item.id === action.payload.id && item.selectedSize === action.payload.selectedSize
+          item.id === action.payload.id && 
+          item.selectedSize === action.payload.selectedSize &&
+          item.selectedColor === action.payload.selectedColor
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -51,7 +63,12 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         };
       }
       
-      const newItems = [...state.items, { ...action.payload, quantity: 1, selectedSize: action.payload.selectedSize }];
+      const newItems = [...state.items, { 
+        ...action.payload, 
+        quantity: 1, 
+        selectedSize: action.payload.selectedSize,
+        selectedColor: action.payload.selectedColor
+      }];
       return {
         items: newItems,
         total: newItems.reduce((sum, item) => sum + item.price * item.quantity, 0)

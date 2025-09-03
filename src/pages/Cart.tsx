@@ -56,7 +56,21 @@ const Cart = () => {
                     
                     <div className="flex-1 min-w-0">
                       <h3 className="font-medium text-base sm:text-lg truncate">{item.name}</h3>
-                      <p className="text-muted-foreground text-sm">{item.category}</p>
+                      <div className="flex flex-wrap gap-2 text-xs sm:text-sm text-muted-foreground">
+                        <span>{item.category}</span>
+                        {item.selectedColor && (
+                          <>
+                            <span>•</span>
+                            <span>Cor: {item.selectedColor}</span>
+                          </>
+                        )}
+                        {item.selectedSize && (
+                          <>
+                            <span>•</span>
+                            <span>Tamanho: {item.selectedSize}</span>
+                          </>
+                        )}
+                      </div>
                       <p className="font-semibold mt-1 text-sm sm:text-base">R$ {item.price.toFixed(2)}</p>
                     </div>
                   </div>

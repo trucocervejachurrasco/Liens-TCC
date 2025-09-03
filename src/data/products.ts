@@ -1,4 +1,4 @@
-import { Product } from '@/context/CartContext';
+import { Product, ProductColor } from '@/context/CartContext';
 import tshirtImage from '@/assets/camisetapsg.jpg';
 import tshirtFront from '@/assets/camisetapsg-front.jpg';
 import tshirtBack from '@/assets/camisetapsgverso.jpg';
@@ -22,6 +22,13 @@ export const products: Product[] = [
     price: 95.99,
     image: tshirtImage,
     images: [tshirtImage, tshirtBack],
+    colors: [
+      {
+        name: 'Creme',
+        value: '#F5F5DC',
+        images: [tshirtImage, tshirtBack]
+      }
+    ],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta premium em algodão macio com design exclusivo do Liens Sport Club. Perfeita para o dia a dia com estilo casual e conforto.'
@@ -42,6 +49,13 @@ export const products: Product[] = [
     price: 109.99,
     image: nascidoparavencer,
     images: [nascidoparavencer, nascidoparavencer2],
+    colors: [
+      {
+        name: 'Preto',
+        value: '#000000',
+        images: [nascidoparavencer, nascidoparavencer2]
+      }
+    ],
     category: 'Camisetas',
     sizes: ['PP', 'P', 'M', 'G', 'GG'],
     description: 'Camiseta premium com estampa exclusiva nas costas, celebrando a conquista histórica do PSG na Champions 2025. Um design que une esporte, estilo e a sofisticação francesa em cada detalhe.'
@@ -62,6 +76,13 @@ export const products: Product[] = [
     price: 129.90,
     image: polo,
     images: [polo, poloverso],
+    colors: [
+      {
+        name: 'Branco',
+        value: '#FFFFFF',
+        images: [polo, poloverso]
+      }
+    ],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta polo branca inspirada no esporte francês, feita para o tênis. Une elegância clássica, leveza e a sofisticação esportiva de Paris, refletindo o equilíbrio entre performance e estilo.'

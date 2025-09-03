@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import * as React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Minus, Plus, ShoppingCart } from 'lucide-react';
 import { products } from '@/data/products';
@@ -17,8 +18,33 @@ const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
   const { dispatch } = useCart();
+
+  // Initialize images when component mounts or product changes
+  React.useEffect(() => {
+    if (product) {
+      if (product.colors && product.colors.length > 0) {
+        // Set first color as default
+        setSelectedColor(product.colors[0].name);
+        setCurrentImages(product.colors[0].images);
+      } else {
+        // Use default images if no colors
+        setCurrentImages(product.images || [product.image]);
+      }
+    }
+  }, [product]);
+
+  // Update images when color changes
+  const handleColorChange = (colorName: string) => {
+    setSelectedColor(colorName);
+    const color = product?.colors?.find(c => c.name === colorName);
+    if (color) {
+      setCurrentImages(color.images);
+    }
+  };
   
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedColor, setSelectedColor] = useState<string>('');
+  const [currentImages, setCurrentImages] = useState<string[]>([]);
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
@@ -35,7 +61,7 @@ const ProductDetail = () => {
   }
 
   const handleAddToCart = () => {
-    if (!selectedSize) {
+    if (product?.sizes && !selectedSize) {
       toast({
         title: "Selecione um tamanho",
         description: "Por favor, escolha um tamanho antes de adicionar ao carrinho",
@@ -44,16 +70,27 @@ const ProductDetail = () => {
       return;
     }
 
+    if (product?.colors && !selectedColor) {
+      toast({
+        title: "Selecione uma cor",
+        description: "Por favor, escolha uma cor antes de adicionar ao carrinho",
+        variant: "destructive"
+      });
+      return;
+    }
+
     for (let i = 0; i < quantity; i++) {
       dispatch({ 
         type: 'ADD_ITEM', 
-        payload: { ...product, selectedSize } 
+        payload: { ...product, selectedSize, selectedColor } 
       });
     }
 
+    const colorText = selectedColor ? ` - ${selectedColor}` : '';
+    const sizeText = selectedSize ? ` (${selectedSize})` : '';
     toast({
       title: "Produto adicionado",
-      description: `${quantity}x ${product.name} (${selectedSize}) foi adicionado ao carrinho`,
+      description: `${quantity}x ${product.name}${colorText}${sizeText} foi adicionado ao carrinho`,
     });
   };
 
@@ -77,8 +114,8 @@ const ProductDetail = () => {
           <div className="relative">
             <Carousel className="w-full">
               <CarouselContent>
-                {product.images && product.images.length > 0 ? (
-                  product.images.map((image, index) => (
+                {currentImages && currentImages.length > 0 ? (
+                  currentImages.map((image, index) => (
                     <CarouselItem key={index}>
                       <div className="aspect-square overflow-hidden rounded-xl bg-muted cursor-zoom-in">
                         <img
@@ -101,7 +138,7 @@ const ProductDetail = () => {
                   </CarouselItem>
                 )}
               </CarouselContent>
-              {product.images && product.images.length > 1 && (
+              {currentImages && currentImages.length > 1 && (
                 <>
                   <CarouselPrevious className="left-4" />
                   <CarouselNext className="right-4" />
@@ -122,6 +159,32 @@ const ProductDetail = () => {
                 {product.description}
               </p>
             </div>
+
+            {/* Color Selection */}
+            {product.colors && product.colors.length > 0 && (
+              <div>
+                <h3 className="font-medium mb-3 text-sm sm:text-base">Cor</h3>
+                <div className="flex flex-wrap gap-3">
+                  {product.colors.map((color) => (
+                    <button
+                      key={color.name}
+                      onClick={() => handleColorChange(color.name)}
+                      className={`flex items-center gap-2 px-3 py-2 sm:px-4 border rounded-lg font-medium transition-all text-sm sm:text-base ${
+                        selectedColor === color.name
+                          ? 'border-primary bg-primary text-primary-foreground'
+                          : 'border-input hover:border-primary'
+                      }`}
+                    >
+                      <div 
+                        className="w-4 h-4 rounded-full border border-gray-300"
+                        style={{ backgroundColor: color.value }}
+                      />
+                      {color.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Size Selection */}
             {product.sizes && (
