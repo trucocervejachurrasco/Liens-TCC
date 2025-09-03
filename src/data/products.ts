@@ -27,8 +27,17 @@ export const products: Product[] = [
         name: 'Creme',
         value: '#F5F5DC',
         images: [tshirtImage, tshirtBack]
+      },
+      {
+        name: 'Azul Marinho',
+        value: '#1e3a8a',
+        images: [tshirtImage, tshirtBack]
+      },
+      {
+        name: 'Verde',
+        value: '#16a34a',
+        images: [tshirtImage, tshirtBack]
       }
-      
     ],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
@@ -54,6 +63,16 @@ export const products: Product[] = [
       {
         name: 'Preto',
         value: '#000000',
+        images: [nascidoparavencer, nascidoparavencer2]
+      },
+      {
+        name: 'Branco',
+        value: '#FFFFFF',
+        images: [nascidoparavencer, nascidoparavencer2]
+      },
+      {
+        name: 'Cinza',
+        value: '#6b7280',
         images: [nascidoparavencer, nascidoparavencer2]
       }
     ],
@@ -81,6 +100,16 @@ export const products: Product[] = [
       {
         name: 'Branco',
         value: '#FFFFFF',
+        images: [polo, poloverso]
+      },
+      {
+        name: 'Preto',
+        value: '#000000',
+        images: [polo, poloverso]
+      },
+      {
+        name: 'Azul',
+        value: '#2563eb',
         images: [polo, poloverso]
       }
     ],
