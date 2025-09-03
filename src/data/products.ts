@@ -44,16 +44,6 @@ export const products: Product[] = [
   },
   {
     id: '2',
-    name: 'Boné Liens Sport Club',
-    price: 80.50,
-    image: bone,
-    images: [bone, boneBack],
-    category: 'Bonés',
-    sizes: ['P', 'M', 'G', 'GG'],
-    description: 'Boné inspirado no esporte francês, combinando conforto, leveza e o estilo esportivo-chic de Paris.'
-  },
-  {
-    id: '3',
     name: 'Camiseta Nascido Para Vencer',
     price: 109.99,
     image: nascidoparavencer,
@@ -75,17 +65,7 @@ export const products: Product[] = [
     description: 'Camiseta premium com estampa exclusiva nas costas, celebrando a conquista histórica do PSG na Champions 2025. Um design que une esporte, estilo e a sofisticação francesa em cada detalhe.'
   },
   {
-    id: '4',
-    name: 'Jaqueta Esportiva Liens Sport Club',
-    price: 199.90,
-    image: jaqueta,
-    images: [jaqueta, jaquetaverso],
-    category: 'Jaqueta',
-    sizes: ['P', 'M', 'G', 'GG', 'G1', 'G4'],
-    description: 'Jaqueta premium inspirada na glória do PSG na Champions 2025. Design sofisticado que une o espírito esportivo francês à elegância urbana, feita para destacar estilo e conquista em qualquer ocasião.'
-  },
-  {
-    id: '5',
+    id: '3',
     name: 'Camisa Polo Tenis Liens',
     price: 129.90,
     image: polo,
@@ -110,6 +90,26 @@ export const products: Product[] = [
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
     description: 'Camiseta polo branca inspirada no esporte francês, feita para o tênis. Une elegância clássica, leveza e a sofisticação esportiva de Paris, refletindo o equilíbrio entre performance e estilo.'
+  },
+  {
+    id: '4',
+    name: 'Boné Liens Sport Club',
+    price: 80.50,
+    image: bone,
+    images: [bone, boneBack],
+    category: 'Bonés',
+    sizes: ['P', 'M', 'G', 'GG'],
+    description: 'Boné inspirado no esporte francês, combinando conforto, leveza e o estilo esportivo-chic de Paris.'
+  },
+  {
+    id: '5',
+    name: 'Jaqueta Esportiva Liens Sport Club',
+    price: 199.90,
+    image: jaqueta,
+    images: [jaqueta, jaquetaverso],
+    category: 'Jaqueta',
+    sizes: ['P', 'M', 'G', 'GG', 'G1', 'G4'],
+    description: 'Jaqueta premium inspirada na glória do PSG na Champions 2025. Design sofisticado que une o espírito esportivo francês à elegância urbana, feita para destacar estilo e conquista em qualquer ocasião.'
   },
   {
     id: '6',
