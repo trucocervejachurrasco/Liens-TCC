@@ -29,15 +29,10 @@ export const products: Product[] = [
         images: [tshirtImage, tshirtBack]
       },
       {
-        name: 'Azul Marinho',
-        value: '#1e3a8a',
+        name: 'Preto',
+        value: '#000000',
         images: [tshirtImage, tshirtBack]
       },
-      {
-        name: 'Verde',
-        value: '#16a34a',
-        images: [tshirtImage, tshirtBack]
-      }
     ],
     category: 'Camisetas',
     sizes: ['P', 'M', 'G', 'GG'],
