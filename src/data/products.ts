@@ -18,7 +18,7 @@ import shortverso from '@/assets/shortverso.jpg';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Camiseta Creme Liens Sport Club',
+    name: 'Camiseta Liens Sport Club',
     price: 95.99,
     image: tshirtImage,
     images: [tshirtImage, tshirtBack],
@@ -50,7 +50,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'Camiseta Preta Nascido Para Vencer',
+    name: 'Camiseta Nascido Para Vencer',
     price: 109.99,
     image: nascidoparavencer,
     images: [nascidoparavencer, nascidoparavencer2],
@@ -65,11 +65,6 @@ export const products: Product[] = [
         value: '#FFFFFF',
         images: [nascidoparavencer, nascidoparavencer2]
       },
-      {
-        name: 'Cinza',
-        value: '#6b7280',
-        images: [nascidoparavencer, nascidoparavencer2]
-      }
     ],
     category: 'Camisetas',
     sizes: ['PP', 'P', 'M', 'G', 'GG'],
