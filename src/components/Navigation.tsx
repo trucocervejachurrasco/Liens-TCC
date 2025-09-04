@@ -36,6 +36,12 @@ const Navigation = () => {
               Produtos
             </Link>
             <Link 
+              to="/gallery" 
+              className={`nav-link ${isActive('/gallery') ? 'nav-link-active' : ''}`}
+            >
+              Galeria
+            </Link>
+            <Link 
               to="/register" 
               className={`nav-link ${isActive('/register') ? 'nav-link-active' : ''}`}
             >
@@ -101,6 +107,13 @@ const Navigation = () => {
                 onClick={closeMenu}
               >
                 Produtos
+              </Link>
+              <Link 
+                to="/gallery" 
+                className={`nav-link ${isActive('/gallery') ? 'nav-link-active' : ''} py-2`}
+                onClick={closeMenu}
+              >
+                Galeria
               </Link>
               <Link 
                 to="/register" 
