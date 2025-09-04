@@ -11,6 +11,7 @@ import polo from '@/assets/polo.jpg';
 import bone from '@/assets/bone.jpg';
 import short from '@/assets/short2.jpg';
 import imagem1 from '@/assets/galeria1.jpg';
+import imagem2 from '@/assets/galeria2.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -20,13 +21,13 @@ const Gallery = () => {
       id: 1,
       src: imagem1,
       alt: 'Roland Garros',
-      title: 'Liens Company'
+      title: 'Liens Company - Musetti'
     },
     {
       id: 2,
-      src: header,
-      alt: 'Estilo e Elegância da França',
-      title: 'Elegância Urbana'
+      src: imagem2,
+      alt: 'Doue PSG',
+      title: 'Liens Company - PSG'
     },
     {
       id: 3,
