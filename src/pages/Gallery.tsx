@@ -28,42 +28,6 @@ const Gallery = () => {
       src: imagem2,
       alt: 'Doue PSG',
       title: 'Liens Company - PSG'
-    },
-    {
-      id: 3,
-      src: camisetaLiens,
-      alt: 'Camiseta Liens Collection',
-      title: 'Camiseta Liens'
-    },
-    {
-      id: 4,
-      src: camisetaPsg,
-      alt: 'Camiseta PSG Champions 2025',
-      title: 'PSG Champions Collection'
-    },
-    {
-      id: 5,
-      src: jaqueta,
-      alt: 'Jaqueta Esportiva Premium',
-      title: 'Jaqueta Esportiva'
-    },
-    {
-      id: 6,
-      src: polo,
-      alt: 'Polo Tênis Elegante',
-      title: 'Polo Tênis'
-    },
-    {
-      id: 7,
-      src: bone,
-      alt: 'Boné Sport Club',
-      title: 'Boné Sport Club'
-    },
-    {
-      id: 8,
-      src: short,
-      alt: 'Short Mapa de Calor',
-      title: 'Short Collection'
     }
   ];
 
