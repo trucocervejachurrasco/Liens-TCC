@@ -10,6 +10,7 @@ import jaqueta from '@/assets/jaqueta.jpg';
 import polo from '@/assets/polo.jpg';
 import bone from '@/assets/bone.jpg';
 import short from '@/assets/short2.jpg';
+import imagem1 from '@/assets/galeria1.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -17,9 +18,9 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: heroBackground,
-      alt: 'Coleção Liens Sport Club - Inspiração Francesa',
-      title: 'Espírito Esportivo Francês'
+      src: galeria1,
+      alt: 'Roland Garros',
+      title: 'Liens Company'
     },
     {
       id: 2,
