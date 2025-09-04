@@ -18,7 +18,7 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: galeria1,
+      src: imagem1,
       alt: 'Roland Garros',
       title: 'Liens Company'
     },
