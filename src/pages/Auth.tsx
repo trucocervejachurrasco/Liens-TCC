@@ -109,23 +109,7 @@ const Auth = () => {
 
       if (error) throw error;
 
-      // Update profile with additional information
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        const { error: profileError } = await supabase
-          .from('profiles')
-          .update({
-            name: formData.name,
-            address: formData.address,
-            city: formData.city,
-            zip_code: formData.zipCode
-          })
-          .eq('user_id', user.id);
-
-        if (profileError) {
-          console.error('Profile update error:', profileError);
-        }
-      }
+      // Profile will be automatically created by the trigger with metadata
 
       toast({
         title: "Conta criada!",
