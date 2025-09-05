@@ -42,12 +42,6 @@ const Navigation = () => {
               Galeria
             </Link>
             <Link 
-              to="/register" 
-              className={`nav-link ${isActive('/register') ? 'nav-link-active' : ''}`}
-            >
-              Cadastro
-            </Link>
-            <Link 
               to="/account" 
               className={`nav-link ${isActive('/account') ? 'nav-link-active' : ''} flex items-center space-x-1`}
             >
@@ -114,13 +108,6 @@ const Navigation = () => {
                 onClick={closeMenu}
               >
                 Galeria
-              </Link>
-              <Link 
-                to="/register" 
-                className={`nav-link ${isActive('/register') ? 'nav-link-active' : ''} py-2`}
-                onClick={closeMenu}
-              >
-                Cadastro
               </Link>
               <Link 
                 to="/account" 
