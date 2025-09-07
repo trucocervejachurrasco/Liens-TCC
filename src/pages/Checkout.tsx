@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import { CreditCard, Truck, CheckCircle } from 'lucide-react';
 
 const Checkout = () => {
@@ -39,20 +40,97 @@ const Checkout = () => {
     e.preventDefault();
     setIsProcessing(true);
     
-    // Simular processamento do pedido
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Limpar carrinho
-    dispatch({ type: 'CLEAR_CART' });
-    
-    toast({
-      title: "Pedido realizado com sucesso!",
-      description: "Você receberá um e-mail com os detalhes do pedido",
-    });
-    
-    // Redirecionar para página de sucesso
-    navigate('/order-success');
-    setIsProcessing(false);
+    try {
+      // Check if user is authenticated
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session?.user) {
+        toast({
+          title: "Erro",
+          description: "Você precisa estar logado para fazer um pedido",
+          variant: "destructive"
+        });
+        navigate('/auth');
+        return;
+      }
+
+      // Generate order number
+      const { data: orderNumberData, error: orderNumberError } = await supabase
+        .rpc('generate_order_number');
+
+      if (orderNumberError) throw orderNumberError;
+
+      // Create order
+      const orderData = {
+        user_id: session.user.id,
+        order_number: orderNumberData,
+        total_amount: state.total,
+        status: 'pending',
+        payment_method: formData.paymentMethod,
+        customer_name: formData.fullName,
+        customer_email: formData.email,
+        customer_phone: formData.phone,
+        delivery_address: formData.address,
+        delivery_city: formData.city,
+        delivery_state: formData.state,
+        delivery_zip_code: formData.zipCode
+      };
+
+      const { data: order, error: orderError } = await supabase
+        .from('orders')
+        .insert(orderData)
+        .select()
+        .single();
+
+      if (orderError) throw orderError;
+
+      // Create order items
+      const orderItems = state.items.map(item => ({
+        order_id: order.id,
+        product_id: item.id,
+        product_name: item.name,
+        product_image: item.image,
+        price: item.price,
+        quantity: item.quantity,
+        selected_size: item.selectedSize,
+        selected_color: item.selectedColor
+      }));
+
+      const { error: itemsError } = await supabase
+        .from('order_items')
+        .insert(orderItems);
+
+      if (itemsError) throw itemsError;
+
+      // Update order status to completed (simulating payment success)
+      const { error: updateError } = await supabase
+        .from('orders')
+        .update({ status: 'completed' })
+        .eq('id', order.id);
+
+      if (updateError) throw updateError;
+
+      // Clear cart
+      dispatch({ type: 'CLEAR_CART' });
+      
+      toast({
+        title: "Pedido realizado com sucesso!",
+        description: `Pedido #${orderData.order_number} criado`,
+      });
+      
+      // Redirect to success page
+      navigate('/order-success');
+      
+    } catch (error: any) {
+      console.error('Error creating order:', error);
+      toast({
+        title: "Erro",
+        description: "Erro ao processar pedido. Tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
   
   if (state.items.length === 0) {

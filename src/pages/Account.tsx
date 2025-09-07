@@ -5,9 +5,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import OrderHistory from '@/components/OrderHistory';
 
 interface UserProfile {
   id: string;
+  user_id: string;
   name: string;
   address: string | null;
   city: string | null;
@@ -297,13 +299,7 @@ const Account = () => {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-border">
-            <h3 className="text-lg font-semibold mb-4">Histórico de Pedidos</h3>
-            <div className="text-center py-8 text-muted-foreground">
-              <p>Você ainda não fez nenhum pedido.</p>
-              <p className="text-sm mt-2">Quando fizer suas primeiras compras, elas aparecerão aqui.</p>
-            </div>
-          </div>
+          <OrderHistory userId={profile.user_id} />
         </div>
       </div>
     </div>
