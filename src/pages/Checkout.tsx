@@ -54,68 +54,21 @@ const Checkout = () => {
         return;
       }
 
-      // Generate order number
-      const { data: orderNumberData, error: orderNumberError } = await supabase
-        .rpc('generate_order_number');
-
-      if (orderNumberError) throw orderNumberError;
-
-      // Create order
-      const orderData = {
+      // Simulate order processing (just for demonstration)
+      console.log('Processing order:', {
         user_id: session.user.id,
-        order_number: orderNumberData,
-        total_amount: state.total,
-        status: 'pending',
-        payment_method: formData.paymentMethod,
         customer_name: formData.fullName,
         customer_email: formData.email,
-        customer_phone: formData.phone,
-        delivery_address: formData.address,
-        delivery_city: formData.city,
-        delivery_state: formData.state,
-        delivery_zip_code: formData.zipCode
-      };
-
-      const { data: order, error: orderError } = await supabase
-        .from('orders')
-        .insert(orderData)
-        .select()
-        .single();
-
-      if (orderError) throw orderError;
-
-      // Create order items
-      const orderItems = state.items.map(item => ({
-        order_id: order.id,
-        product_id: item.id,
-        product_name: item.name,
-        product_image: item.image,
-        price: item.price,
-        quantity: item.quantity,
-        selected_size: item.selectedSize,
-        selected_color: item.selectedColor
-      }));
-
-      const { error: itemsError } = await supabase
-        .from('order_items')
-        .insert(orderItems);
-
-      if (itemsError) throw itemsError;
-
-      // Update order status to completed (simulating payment success)
-      const { error: updateError } = await supabase
-        .from('orders')
-        .update({ status: 'completed' })
-        .eq('id', order.id);
-
-      if (updateError) throw updateError;
+        total_amount: state.total,
+        payment_method: formData.paymentMethod
+      });
 
       // Clear cart
       dispatch({ type: 'CLEAR_CART' });
       
       toast({
         title: "Pedido realizado com sucesso!",
-        description: `Pedido #${orderData.order_number} criado`,
+        description: "Seu pedido foi processado",
       });
       
       // Redirect to success page
