@@ -3,14 +3,14 @@ import { products } from '@/data/products';
 
 const Products = () => {
   return (
-    <div className="min-h-screen bg-muted py-12 sm:py-16">
+    <div className="min-h-screen bg-background py-8 sm:py-12">
       <div className="container-elegant px-4">
-        <div className="text-center mb-16 sm:mb-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl font-light tracking-tight mb-4">
             Liens Sport Club
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4 uppercase tracking-widest">
-            Sportswear sofisticado
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
+            Coleção inspirada no esporte francês, unindo movimento, sofisticação e o estilo dinâmico da França.
           </p>
         </div>
         
