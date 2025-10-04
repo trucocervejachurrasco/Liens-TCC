@@ -7,7 +7,7 @@ const Products = () => {
       <div className="container-elegant px-4">
         <div className="text-center mb-16 sm:mb-20">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-6">
-            Tous Les Produits
+            Liens Sport Club
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4 uppercase tracking-widest">
             Sportswear sofisticado
