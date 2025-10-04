@@ -14,11 +14,11 @@ const Navigation = () => {
   const closeMenu = () => setIsMenuOpen(false);
   
   return (
-    <nav className="border-b border-border bg-background sticky top-0 z-50">
-      <div className="container-elegant py-4">
+    <nav className="border-b-2 border-foreground bg-background sticky top-0 z-50 shadow-sm">
+      <div className="container-elegant py-5 sm:py-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
-            <img src={logo} alt="Liens Co." className="h-8 sm:h-10 w-auto" />
+            <img src={logo} alt="Liens Co." className="h-6 sm:h-8 w-auto filter brightness-0" />
           </Link>
           
           {/* Desktop Navigation */}

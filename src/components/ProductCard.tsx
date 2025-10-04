@@ -19,22 +19,23 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
   
   return (
-    <div className="card-elegant p-0 overflow-hidden group">
+    <div className="card-elegant bg-white">
       <Link to={`/products/${product.id}`} className="block">
-        <div className="aspect-square overflow-hidden bg-muted">
+        <div className="aspect-square overflow-hidden bg-muted relative">
           <img 
             src={product.image} 
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
         </div>
         
-        <div className="p-4 sm:p-6">
-          <h3 className="font-medium text-base sm:text-lg mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
-          <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{product.category}</p>
+        <div className="p-6 sm:p-8 bg-white">
+          <p className="text-muted-foreground text-xs sm:text-sm mb-2 uppercase tracking-widest">{product.category}</p>
+          <h3 className="font-bold text-base sm:text-lg mb-4 uppercase tracking-wide">{product.name}</h3>
           
           <div className="flex items-center justify-between">
-            <span className="text-lg sm:text-xl font-semibold">
+            <span className="text-xl sm:text-2xl font-black">
               R$ {product.price.toFixed(2)}
             </span>
             
@@ -44,10 +45,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 e.stopPropagation();
                 handleAddToCart();
               }}
-              className="btn-primary p-2 sm:p-3 rounded-full hover:bg-primary-hover transition-colors"
+              className="bg-foreground text-background p-3 sm:p-4 rounded-sm hover:bg-foreground/90 transition-all duration-300 border-2 border-foreground hover:shadow-lg"
               aria-label={`Adicionar ${product.name} ao carrinho`}
             >
-              <Plus size={14} className="sm:w-4 sm:h-4" />
+              <Plus size={16} className="sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
