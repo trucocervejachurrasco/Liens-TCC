@@ -102,7 +102,7 @@ export const products: Product[] = [
     description: 'Boné inspirado no esporte francês, combinando conforto, leveza e o estilo esportivo-chic de Paris.'
   },
   {
-    id: '5',
+    id: '4',
     name: 'Short Liens Mapa de Calor',
     price: 109.90,
     image: short,
@@ -110,6 +110,16 @@ export const products: Product[] = [
     category: 'Shorts',
     sizes: ['P', 'M', 'G'],
     description: 'Short esportivo com estampa termal, inspirado no dinamismo do esporte francês. Une conforto, performance e estilo contemporâneo, refletindo a energia autêntica das ruas e quadras de Paris.'
+  },
+  {
+    id: '5',
+    name: 'Jaqueta Esportiva Liens Sport Club',
+    price: 199.90,
+    image: jaqueta,
+    images: [jaqueta, jaquetaverso],
+    category: 'Jaqueta',
+    sizes: ['P', 'M', 'G', 'GG', 'G1', 'G4'],
+    description: 'Jaqueta premium inspirada na glória do PSG na Champions 2025. Design sofisticado que une o espírito esportivo francês à elegância urbana, feita para destacar estilo e conquista em qualquer ocasião.'
   },
   {
     id: '6',
